@@ -1,0 +1,24 @@
+# Native theme for the premium dark "fintech" look. It styles every built-in
+# widget, table and chart control; the custom CSS in app.py adds the bento
+# cards and hover micro-interactions on top.
+[theme]
+base = "dark"
+primaryColor = "#4ade80"
+backgroundColor = "#0a0a0a"
+secondaryBackgroundColor = "#171717"
+textColor = "#fafafa"
+borderColor = "#262626"
+showWidgetBorder = true
+baseRadius = "12px"
+buttonRadius = "full"
+font = "Inter:https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+headingFontWeights = [600, 600, 600, 600, 600, 600]
+linkUnderline = false
+greenColor = "#4ade80"
+dataframeHeaderBackgroundColor = "#141414"
+dataframeBorderColor = "#262626"
+
+[theme.sidebar]
+backgroundColor = "#070707"
+secondaryBackgroundColor = "#141414"
+borderColor = "#1f1f1f"
