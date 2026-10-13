@@ -26,6 +26,9 @@ import bisect
 import hashlib
 import html
 import io
+import os
+os.environ["RAPIDOCR_CACHE_DIR"] = "/tmp/.rapidocr"
+os.environ["XDG_CACHE_HOME"] = "/tmp/.cache"
 import math
 import re
 import threading
