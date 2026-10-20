@@ -27,7 +27,9 @@ import hashlib
 import html
 import io
 import os
-os.environ["RAPIDOCR_CACHE_DIR"] = "/tmp/.rapidocr"
+# RapidOCR downloads its models into its own package folder by default, which is
+# read-only when the app runs as a different user than the one who owns the venv.
+os.environ.setdefault("RAPIDOCR_CACHE_DIR", "/tmp/.rapidocr")
 os.environ["XDG_CACHE_HOME"] = "/tmp/.cache"
 import math
 import re
@@ -1038,6 +1040,7 @@ def get_ocr_engine():
     return RapidOCR(params={
         "Global.max_side_len": 6000,   # default 2000 px would shrink big newspaper pages too much
         "Global.log_level": "error",
+        "Global.model_root_dir": os.environ["RAPIDOCR_CACHE_DIR"],  # writable model/download dir
         "Rec.lang_type": LangRec.EN,
         "Rec.ocr_version": OCRVersion.PPOCRV5,
         "Rec.model_type": ModelType.MOBILE,
